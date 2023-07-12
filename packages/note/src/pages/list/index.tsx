@@ -1,8 +1,14 @@
-import { memo } from "react";
-import Item from "./Item";
-import MoreItem from "./MoreItem";
+import { useRequest } from 'ahooks';
+import { memo } from 'react';
+import { getNoteList } from '../../services';
+import Item from './Item';
+import MoreItem from './MoreItem';
 
 function List() {
+  const { data, error } = useRequest(getNoteList);
+
+  console.log('data', data);
+
   return (
     <div className="w-full max-w-screen-xl mx-auto">
       <div className="mb-20">
@@ -19,7 +25,7 @@ function List() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default memo(List);
