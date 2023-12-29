@@ -7,6 +7,5 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <LazyNote></LazyNote>,
-    id: "notes",
   },
 ]);
