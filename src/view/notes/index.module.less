@@ -1,3 +1,11 @@
-.menu {
-  width: 300px;
+:global {
+  .milkdown {
+    height: 100%;
+    @apply bg-slate-50 px-2 py-4 m-5 border rounded;
+
+    & > div {
+      max-width: none;
+      width: 100%;
+    }
+  }
 }

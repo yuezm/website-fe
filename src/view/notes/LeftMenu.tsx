@@ -1,8 +1,6 @@
-import { Menu, MenuProps } from "antd";
+import { Menu } from "antd";
 import { memo, useMemo } from "react";
 
-import styles from "./index.module.less";
-import { ItemType } from "antd/es/breadcrumb/Breadcrumb";
 import { serializeListToMenuItems } from "./util";
 import { useMemoizedFn } from "ahooks";
 
@@ -37,7 +35,7 @@ const LeftMenu = () => {
 
   return (
     <Menu
-      className={styles.menu}
+      className={"w-80"}
       items={items}
       mode="inline"
       onClick={onMenuClick}
