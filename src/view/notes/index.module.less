@@ -1,0 +1,47 @@
+.menu-container {
+}
+
+.detail-container {
+  position: relative;
+  padding-right: 440px;
+
+  :global {
+    .table-of-contents {
+      @apply py-8 border-l;
+
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      width: 440px;
+      height: 100%;
+
+      font-size: 16px;
+
+      & > ol {
+        margin-left: 0 !important;
+        padding-left: 0 !important;
+      }
+
+      ul,
+      ol {
+        @apply pl-2;
+
+        &::marker {
+          content: none;
+        }
+
+        li {
+          &::marker {
+            content: none;
+          }
+
+          @apply px-2  py-2;
+
+          white-space: nowrap;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

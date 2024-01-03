@@ -1,20 +1,16 @@
-import { Flex } from "antd";
-import { memo, useState } from "react";
-import LeftMenu from "./LeftMenu";
-import Detail from "./Detail";
-import Outline from "./Outline";
+import { memo, useState } from 'react';
+import LeftMenu from './LeftMenu';
+import Detail from './Detail';
 
 const Notes = () => {
   const [selectNote, setSelectNote] = useState('');
 
   return (
-    <Flex className="h-full">
-      <LeftMenu></LeftMenu>
-      
-      <Detail selectNote={selectNote}></Detail>
-      
-      <Outline></Outline>
-    </Flex>
+    <div className="flex h-full">
+      <LeftMenu select={selectNote} onSelectChange={setSelectNote}></LeftMenu>
+
+      <Detail select={selectNote}></Detail>
+    </div>
   );
 };
 
