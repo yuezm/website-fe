@@ -1,15 +1,23 @@
-import { memo, useState } from 'react';
-import LeftMenu from './LeftMenu';
+import { memo, useMemo, useState } from 'react';
+
+import { RootNote } from '../../model/Note';
 import Detail from './Detail';
+import LeftMenu from './LeftMenu';
+import { createNewGroup, findNoteByKeys } from './util';
 
 const Notes = () => {
-  const [selectNote, setSelectNote] = useState('');
+  const [rootNote, setRootNote] = useState<RootNote>(createNewGroup('root'));
+  const [selectKey, setSelectKey] = useState('');
+
+  const selectNote = useMemo(() => {
+    return findNoteByKeys(rootNote, selectKey);
+  }, [rootNote, selectKey]);
 
   return (
     <div className="flex h-full">
-      <LeftMenu select={selectNote} onSelectChange={setSelectNote}></LeftMenu>
+      <LeftMenu selectKey={selectKey} onSelectKeyChange={setSelectKey} rootNote={rootNote} onRootNoteChange={setRootNote}></LeftMenu>
 
-      <Detail select={selectNote}></Detail>
+      <Detail selectNote={selectNote}></Detail>
     </div>
   );
 };

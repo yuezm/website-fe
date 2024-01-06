@@ -1,13 +1,15 @@
-import { FC, memo } from "react";
-import markdownit from "markdown-it";
-import anchor from "markdown-it-anchor";
-import toc from "markdown-it-toc-done-right";
-import taskLists from "markdown-it-task-lists";
-import collapsible from "markdown-it-collapsible";
-import classNames from "classnames";
+import '.././../assets/styles/github-markdown.css';
 
-import ".././../assets/styles/github-markdown.css";
-import styles from "./index.module.less";
+import classNames from 'classnames';
+import markdownit from 'markdown-it';
+import anchor from 'markdown-it-anchor';
+import collapsible from 'markdown-it-collapsible';
+import taskLists from 'markdown-it-task-lists';
+import toc from 'markdown-it-toc-done-right';
+import { FC, memo } from 'react';
+
+import { Note } from '../../model/Note';
+import styles from './index.module.less';
 
 const md = markdownit({
   html: true,
@@ -17,20 +19,26 @@ const md = markdownit({
 md.use(anchor, {
   permalink: true,
   permalinkBefore: true,
-  permalinkSymbol: "#",
+  permalinkSymbol: '#',
 });
 md.use(toc);
 md.use(taskLists, { enabled: true });
 md.use(collapsible);
 
-const Detail: FC = () => {
+interface DetailProps {
+  selectNote: Note;
+}
+
+const Detail: FC<DetailProps> = (props) => {
+  const { selectNote } = props;
+
   return (
-    <div className={classNames("flex-auto", styles["detail-container"])}>
+    <div className={classNames('flex-auto', styles['detail-container'])}>
       <div className="px-10 py-8 min-w-screen-lg mx-auto">
         <section
           className="markdown-body"
           dangerouslySetInnerHTML={{
-            __html: "",
+            __html: md.render('#hello word'),
           }}
         ></section>
       </div>

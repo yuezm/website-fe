@@ -1,34 +1,29 @@
 import { useMemoizedFn } from 'ahooks';
+import { Menu, MenuProps } from 'antd';
 import { memo, useEffect, useState } from 'react';
 import { router } from '../router';
-import classNames from 'classnames';
 
-interface MenuItem {
-  label: string;
-  path: string;
-}
-
-const items: MenuItem[] = [
+const items = [
   {
     label: '知识库',
-    path: '/',
+    key: '/',
   },
   {
     label: '脑图',
-    path: '/mind',
+    key: '/mind',
   },
   {
     label: '画板',
-    path: '/draw',
+    key: '/draw',
   },
 ];
 
 const Header = () => {
-  const [current, setCurrent] = useState('mail');
+  const [current, setCurrent] = useState('/');
 
-  const onMenuClick = useMemoizedFn((item: MenuItem) => {
-    setCurrent(item.path);
-    router.navigate(item.path);
+  const onMenuClick: MenuProps['onClick'] = useMemoizedFn((e) => {
+    setCurrent(e.key);
+    router.navigate(e.key);
   });
 
   useEffect(() => {
@@ -37,23 +32,8 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="flex-none border-b flex items-center">
-      {items.map((item) => {
-        return (
-          <div
-            key={item.path}
-            className={classNames('ml-3 text-base cursor-pointer h-full leading-10 py-2', {
-              'border-b border-sky-500 text-sky-500': current === item.path,
-            })}
-            style={{
-              marginBottom: '-1px',
-            }}
-            onClick={() => onMenuClick(item)}
-          >
-            {item.label}
-          </div>
-        );
-      })}
+    <header className="flex-none h-12">
+      <Menu onClick={onMenuClick} selectedKeys={[current]} mode="horizontal" items={items}></Menu>
     </header>
   );
 };

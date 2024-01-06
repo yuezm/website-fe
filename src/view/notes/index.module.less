@@ -1,4 +1,23 @@
 .menu-container {
+  :global {
+    .ant-tree-treenode {
+      width: 100%;
+
+      .ant-tree-switcher {
+        display: none;
+        @apply leading-10;
+
+        &.ant-tree-switcher_close,
+        &.ant-tree-switcher_open {
+          display: block;
+        }
+      }
+      .ant-tree-node-content-wrapper {
+        @apply h-10 leading-10 pl-2;
+        flex: 1;
+      }
+    }
+  }
 }
 
 .detail-container {
