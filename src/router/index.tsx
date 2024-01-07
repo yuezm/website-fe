@@ -1,11 +1,11 @@
-import { createBrowserRouter } from "react-router-dom";
-import { lazy } from "react";
+import { lazy } from 'react';
+import { createBrowserRouter } from 'react-router-dom';
 
-const LazyNote = lazy(() => import("../view/notes"));
+const LazyNote = lazy(() => import('../view/notes'));
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <LazyNote></LazyNote>,
   },
 ]);

@@ -1,8 +1,3 @@
-import { UIEvent } from "react";
-
-export function noopFunctionStop(ev: UIEvent) {
-  console.log('ev', ev);
-
-  ev.stopPropagation();
-  ev.nativeEvent.stopPropagation();
+export function isURL(str: string) {
+  return str.startsWith('http://') || str.startsWith('https://') || str.startsWith('//') || str.startsWith('www.');
 }

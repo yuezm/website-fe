@@ -15,7 +15,12 @@ const Notes = () => {
 
   return (
     <div className="flex h-full">
-      <LeftMenu selectKey={selectKey} onSelectKeyChange={setSelectKey} rootNote={rootNote} onRootNoteChange={setRootNote}></LeftMenu>
+      <LeftMenu
+        selectKey={selectKey}
+        onSelectKeyChange={setSelectKey}
+        rootNote={rootNote}
+        onRootNoteChange={setRootNote}
+      ></LeftMenu>
 
       <Detail selectNote={selectNote}></Detail>
     </div>
