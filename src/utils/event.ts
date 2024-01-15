@@ -1,4 +1,4 @@
-import { UIEvent } from "react";
+import { UIEvent } from 'react';
 
 export function noopFunctionStop(ev: UIEvent) {
   ev.stopPropagation();

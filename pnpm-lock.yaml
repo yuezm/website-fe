@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@ant-design/icons': ^5.2.6
+  '@mind-elixir/node-menu': ^1.0.3
   '@tailwindcss/typography': ^0.5.10
   '@types/lodash': ^4.14.202
   '@types/markdown-it': ^13.0.7
@@ -28,6 +29,7 @@ specifiers:
   markdown-it-collapsible: ^2.0.0
   markdown-it-task-lists: ^2.1.1
   markdown-it-toc-done-right: ^4.2.0
+  mind-elixir: ^3.3.2
   postcss: ^8.4.23
   prettier: ^3.1.1
   qiniu-js: ^3.4.1
@@ -42,6 +44,7 @@ specifiers:
 
 dependencies:
   '@ant-design/icons': 5.2.6_biqbaboplfbrettd7655fr4n2y
+  '@mind-elixir/node-menu': 1.0.3_mind-elixir@3.3.2
   '@tailwindcss/typography': 0.5.10_tailwindcss@3.4.0
   ahooks: 3.7.8_react@18.2.0
   antd: 5.12.5_biqbaboplfbrettd7655fr4n2y
@@ -53,6 +56,7 @@ dependencies:
   markdown-it-collapsible: 2.0.0_markdown-it@14.0.0
   markdown-it-task-lists: 2.1.1
   markdown-it-toc-done-right: 4.2.0
+  mind-elixir: 3.3.2
   qiniu-js: 3.4.1
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -480,6 +484,14 @@ packages:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.1
       '@jridgewell/sourcemap-codec': 1.4.15
+    dev: false
+
+  /@mind-elixir/node-menu/1.0.3_mind-elixir@3.3.2:
+    resolution: {integrity: sha512-iRGl280bja8CDevceHaxlpagIJnGS7oNrzfYdzwWgq4AMUq+pTEZWWHmEma1d/VG+UOB0jT3XrLLWZT9Tz+y0g==}
+    peerDependencies:
+      mind-elixir: ^2.0.1
+    dependencies:
+      mind-elixir: 3.3.2
     dev: false
 
   /@nodelib/fs.scandir/2.1.5:
@@ -2026,6 +2038,10 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /mind-elixir/3.3.2:
+    resolution: {integrity: sha512-SHHospQXT7ARaNMMnaZLFzBsOela9tc8rgSYHPhAPrV8Jxh6MCo1X8qQxJAvuqIVvN8uSGnXf+Po4nhzzSmWWQ==}
+    dev: false
 
   /minimatch/3.1.2:
     resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}

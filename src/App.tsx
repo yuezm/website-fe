@@ -10,7 +10,7 @@ const App = () => {
     <div className="flex flex-col h-full w-full">
       <Header></Header>
 
-      <main className="flex-auto h-full w-full">
+      <main className="flex-auto w-full h-0">
         <RouterProvider router={router}></RouterProvider>
       </main>
 
