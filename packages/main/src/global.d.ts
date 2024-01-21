@@ -1,1 +1,0 @@
-type NotNull<T> = T extends undefined ? never : T;
